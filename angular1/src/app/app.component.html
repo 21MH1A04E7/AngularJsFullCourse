@@ -1,0 +1,24 @@
+<div class="input-container">
+  <input type="text" placeholder="First Name" #inputEl />
+  <br /><br />
+  <input type="text" placeholder="Middle Name" #inputEl />
+  <br /><br />
+  <input type="text" placeholder="Last Name" #inputEl />
+  <button (click)="show()">Show Full Name</button>
+  <h3>{{ fullName }}</h3>
+
+  <div>
+    <h3>ngTemplate</h3>
+    <ng-template #template>
+      <h2>this is a template</h2>
+      <p>this is an ng template</p>
+    </ng-template>
+    <ng-container *ngTemplateOutlet="template"></ng-container>
+  </div>
+  <hr />
+  <app-parent></app-parent>
+  <hr />
+  <app-container></app-container>
+  <hr />
+  <app-structural-directive></app-structural-directive>
+</div>

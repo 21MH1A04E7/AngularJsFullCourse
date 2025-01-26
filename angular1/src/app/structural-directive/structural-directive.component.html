@@ -1,0 +1,43 @@
+<div class="notice-container">
+  <div class="notice-header"><button (click)="displayTerms()">+</button></div>
+  <div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit culpa eos
+      nulla?
+    </p>
+  </div>
+  <!-- <ng-template [ngIf]="display" [ngIfElse]="myTempVar"> -->
+  <div class="notice-info" *appIf="display">
+    <h1>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, quam.
+    </h1>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid pariatur
+      debitis id, voluptates, unde minima qui repellat, odit officia eveniet
+      tenetur tempora porro optio necessitatibus aspernatur eum quo?
+    </p>
+    <h2>Terms of services</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid pariatur
+      debitis id, voluptates, unde minima qui repellat, odit officia eveniet
+      tenetur tempora porro optio necessitatibus aspernatur eum quo?
+    </p>
+    <h2>privacy Policy</h2>
+    <p>
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid pariatur
+      debitis id, voluptates, unde minima qui repellat, odit officia eveniet
+      tenetur tempora porro optio necessitatibus aspernatur eum quo?
+    </p>
+  </div>
+  <!-- </ng-template> -->
+  <!-- <ng-template #myTempVar>
+    <div>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda
+        velit quis consequatur ipsam voluptatum. Minima illo quos soluta odio,
+        nostrum molestias voluptates autem ipsam, harum cum inventore eos atque
+        reiciendis!
+      </p>
+    </div>
+  </ng-template> -->
+</div>

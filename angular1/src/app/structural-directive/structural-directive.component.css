@@ -1,0 +1,44 @@
+/* General container styles */
+.notice-container {
+    width: 80%;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: #f4f4f4;
+    border-radius: 5px;
+  }
+  
+  /* Header styling */
+  .notice-header {
+    text-align: right;
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .notice-header button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  .notice-header button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Content section styles */
+  .notice-info h1, .notice-info h2 {
+    font-size: 20px;
+    color: #333;
+    margin-top: 15px;
+  }
+  
+  .notice-info p {
+    font-size: 16px;
+    color: #555;
+    line-height: 1.5;
+    margin: 10px 0;
+  }
+  

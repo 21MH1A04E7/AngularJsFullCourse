@@ -1,0 +1,26 @@
+<div>
+  <app-child>
+    <h2>parent component</h2>
+    <p #param>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa tenetur,
+      suscipit eum error eius vel id consequatur nihil tempora! Lorem ipsum
+      dolor sit. Lorem, ipsum dolor.
+    </p>
+    <p #param>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa tenetur,
+      suscipit eum error eius vel id consequatur nihil tempora! Lorem ipsum
+      dolor sit. Lorem, ipsum dolor.
+    </p>
+    <p #param>
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa tenetur,
+      suscipit eum error eius vel id consequatur nihil tempora! Lorem ipsum
+      dolor sit. Lorem, ipsum dolor.
+    </p>
+    <hr />
+    <app-test [name]="'sujit '"></app-test>
+    <app-test [name]="'hariom'"></app-test>
+    <app-test [name]="'vinay'"></app-test>
+  </app-child>
+
+  <button (click)="show()">show</button>
+</div>
