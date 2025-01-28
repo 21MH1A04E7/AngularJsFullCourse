@@ -18,6 +18,7 @@ import { BannerComponent } from './home/banner/banner.component';
 import { HeaderComponent } from './header/header.component';
 import { LoginComponent } from './login/login.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -36,13 +37,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BannerComponent,
     HeaderComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

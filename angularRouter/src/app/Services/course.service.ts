@@ -99,7 +99,7 @@ export class CourseService {
     return new Observable<Course[]>((sub) => {
       setTimeout(() => {
         sub.next(this.courses);
-      }, 5000);
+      }, 3000);
     });
   }
 }

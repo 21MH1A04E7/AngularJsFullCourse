@@ -16,8 +16,12 @@ const routes: Routes = [
   { path: '', redirectTo: 'Home', pathMatch: 'full' },
   { path: 'Home', component: HomeComponent },
   { path: 'About', component: AboutComponent },
-  { path: 'Contact', component: ContactComponent },
-  { path: 'Courses', component: CoursesComponent },
+  { path: 'Contact', component: ContactComponent, canDeactivate: [AuthGuard] },
+  {
+    path: 'Courses',
+    component: CoursesComponent,
+    resolve: { courses: AuthGuard },
+  },
   { path: 'Login', component: LoginComponent },
   // { path: 'Courses/Course/:id', component: CourseDetailComponent },
   {
