@@ -20,7 +20,7 @@ const routes: Routes = [
   {
     path: 'Courses',
     component: CoursesComponent,
-    resolve: { courses: AuthGuard },
+    resolve: { courses: AuthGuard }, //resolve data will be avalille in cousrse
   },
   { path: 'Login', component: LoginComponent },
   // { path: 'Courses/Course/:id', component: CourseDetailComponent },
@@ -41,7 +41,7 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [RouterModule.forRoot(routes, { enableTracing: true })],
   exports: [RouterModule],
 })
 export class AppRoutingModule {}

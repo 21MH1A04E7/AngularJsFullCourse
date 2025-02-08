@@ -10,7 +10,7 @@ import {
   RouterStateSnapshot,
   UrlTree,
 } from '@angular/router';
-import { Observable } from 'rxjs';
+import { catchError, Observable, of } from 'rxjs';
 import { ContactComponent } from '../contact/contact.component';
 import { Course } from '../Models/course';
 import { CourseService } from './course.service';
@@ -83,7 +83,12 @@ export class AuthGuard
     //     courseList = courses;
     //   },
     // });
-    // return courseList;
-    return this.courseService.getAllcourses();
+    // return courseList;//data will not return due to asyn behaviour
+    return this.courseService.getAllcourses().pipe(
+      catchError((error: Error) => {
+        console.error('Data resolution failed', error);
+        return of(null);
+      })
+    );
   }
 }

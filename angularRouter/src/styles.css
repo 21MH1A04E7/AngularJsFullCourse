@@ -17,36 +17,40 @@ body{
     font-weight: bold;
 }
 
-    .loader {
-        width: 48px;
-        height: 48px;
-        border: 5px solid #FFF;
-        border-bottom-color: #FF3D00;
-        border-radius: 50%;
-        display: inline-block;
-        box-sizing: border-box;
-        animation: rotation 1s linear infinite;
-        left: 50%;
-        position: absolute;
-        top: 50%;
-        transform: translate(-50%, -50%);
+   /* The loader element itself */
+.loader {
+    width: 48px;
+    height: 48px;
+    border: 5px solid #FFF;
+    border-bottom-color: #FF3D00; /* Red color for the bottom border */
+    border-radius: 50%; /* Circle shape */
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite; /* Infinite rotation animation */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Center the loader in the middle */
+}
+
+/* Keyframes for rotation animation */
+@keyframes rotation {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
     }
+    100% {
+        transform: rotate(360deg); /* Complete one full rotation */
+    }
+}
 
-    @keyframes rotation {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(360deg);
-        }
-    } 
-
-.overlay{
-    left: 0;
+/* The overlay element that dims the screen */
+.overlay {
+    position: fixed;
     top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    position: fixed;
-    background: #222;
-    opacity: 0.3;
+    background: rgba(34, 34, 34, 0.7); /* Slightly darker overlay */
+    opacity: 0.3; /* Set the transparency of the overlay */
+    z-index: 9999; /* Make sure the overlay is on top of other content */
 }

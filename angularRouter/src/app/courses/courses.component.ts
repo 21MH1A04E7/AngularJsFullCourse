@@ -43,6 +43,7 @@ export class CoursesComponent implements OnInit {
         //     this.AllCourses = data;
         //   },
         // });
+        //accessing the courses data form the resolve
         this.AllCourses = this.activatedRoute.snapshot.data['courses'];
       } else {
         this.AllCourses = this.coursesService.courses.filter((course) =>
