@@ -3,6 +3,7 @@ const {
   getUserById,
   getUserBooksWithCategories,
   getUserBooksWithCategoriesAndTitle,
+  getUserBookByBorrowCount,
 } = require("./user");
 const { getBookByCategory, getBorrowedBooksByCategory } = require("./book");
 const { getBookBasedOnCategory } = require("./category");
@@ -15,4 +16,5 @@ module.exports = {
   getUserBooksWithCategories,
   getUserBooksWithCategoriesAndTitle,
   getBorrowedBooksByCategory,
+  getUserBookByBorrowCount,
 };

@@ -81,9 +81,43 @@ const getUserBooksWithCategoriesAndTitle = async (req, res, next) => {
     console.log("error", error);
   }
 };
+const getUserBookByBorrowCount = async (req, res) => {
+  const count = req.query.count | 1;
+  try {
+    const response = await knex("borrow as b")
+      .join("users as u", "b.user_id", "u.user_id")
+      .join("book", "book.book_id", "b.book_id")
+      .select(
+        "u.name as userName",
+        knex.raw("GROUP_CONCAT(book.title) as Books"),
+        knex.raw("count(book.title) as bookCount")
+      )
+      .where("b.status", "borrowed")
+      .groupBy("u.user_id")
+      .having(knex.raw("COUNT(book.title) >= ?", [count]));
+
+    if (response.length === 0) {
+      return res.status(200).json({
+        message: "no data present",
+        data: [],
+      });
+    }
+    return res.status(200).json({
+      message: "getting all the valid data",
+      data: response,
+    });
+  } catch (err) {
+    console.log("Internal server error while fetching the data on count", err);
+    return res.status(500).json({
+      message: "internal server error",
+      error: err,
+    });
+  }
+};
 module.exports = {
   getUserById,
   getUser,
   getUserBooksWithCategories,
   getUserBooksWithCategoriesAndTitle,
+  getUserBookByBorrowCount,
 };
