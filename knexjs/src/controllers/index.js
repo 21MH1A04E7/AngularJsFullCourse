@@ -4,7 +4,7 @@ const {
   getUserBooksWithCategories,
   getUserBooksWithCategoriesAndTitle,
 } = require("./user");
-const { getBookByCategory } = require("./book");
+const { getBookByCategory, getBorrowedBooksByCategory } = require("./book");
 const { getBookBasedOnCategory } = require("./category");
 
 module.exports = {
@@ -14,4 +14,5 @@ module.exports = {
   getBookBasedOnCategory,
   getUserBooksWithCategories,
   getUserBooksWithCategoriesAndTitle,
+  getBorrowedBooksByCategory,
 };
