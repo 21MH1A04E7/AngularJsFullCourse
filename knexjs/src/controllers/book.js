@@ -44,7 +44,7 @@ const getBorrowedBooksByCategory = async (req, res, next) => {
       .join("book", "borrow.book_id", "book.book_id")
       .join("category", "book.category_id", "category.category_id")
       .select(
-        "users.name as user_name",
+        "users.name as UserName",
         "users.email",
         "book.title as book_title",
         "book.author",
